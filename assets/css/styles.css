@@ -1,0 +1,64 @@
+.btn.btn-primary.addButton {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+#case {
+  display: flex;
+}
+
+#fees {
+  display: flex;
+}
+
+td {
+  width: 40px;
+}
+
+table {
+  font-size: 14px;
+}
+
+i {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: xx-large;
+}
+
+svg {
+  height: 30px;
+  width: auto;
+  color: white;
+}
+
+.tokenId {
+  width: 170px;
+  height: 140px;
+  background: var(--light);
+  box-shadow: 4px 6px 20px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+
+.token {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 40px;
+  text-align: center;
+  color: #000000;
+  padding: 0;
+  line-height: 0px;
+}
+
