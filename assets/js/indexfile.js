@@ -6,8 +6,8 @@ load = () => {
     $.get(
         './php/indexTable.php',
         (data, response) => {
-            if (data !== "null") {
-                data = JSON.parse(data)
+            data = JSON.parse(data)
+            if (data != null) {
 
                 var tableData = `
                     <table class="table table-striped">

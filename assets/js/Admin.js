@@ -6,8 +6,8 @@ load = () => {
     $.get(
         './php/todaydata.php',
         (data, response) => {
-            if (data !== "null") {
-                data = JSON.parse(data)
+            data = JSON.parse(data)
+            if (data != null) {
                 var table = `
                 <div class="table-responsive text-nowrap">
                     <table class="table table-striped" id="Admintable">

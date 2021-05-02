@@ -2,8 +2,8 @@ load = () => {
     $.get(
         './php/alldata.php',
         (data, response) => {
-            if (data !== "null") {
-                data = JSON.parse(data)
+            data = JSON.parse(data)
+            if (data != null) {
                 var table = `<table class="table table-striped" id="OldTable"><thead class="thead-dark"><tr><th>ID</th><th>Name</th><th>Village</th><th>Status</th><th>Case</th><th>Date</th><th>Time</th><th>Delete</th></tr></thead>`;
                 var date = data[0].date
                 data.forEach(ele => {
@@ -40,17 +40,15 @@ load = () => {
     )
 }
 
-deteleData = (id,name) => {
+deteleData = (id, name) => {
     var str = `Delete ${name} ?`
     var r = confirm(str);
     if (r == true) {
         $.post(
             './php/deleteData.php',
-            {id},
-            (data,response) => {
-                if(data === "Success"){
-                    load()
-                }
+            { id },
+            (data, response) => {
+                load()
             }
         )
     }
