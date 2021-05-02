@@ -27,7 +27,7 @@ load = () => {
                             <td>${ele.case}</td>
                             <td>${ele.date}</td>
                             <td>${ele.time}</td>
-                            <td class="text-center"><i class="material-icons" style="color: red;" onclick="deteleData(${ele.id},'${ele.name}')">delete</i></td>
+                            <td class="text-center"><i class="material-icons" style="color: red;" onclick="deteleData(${ele.id},'${ele.name}','${ele.date}')">delete</i></td>
                         </tr>
                     `;
                 });
@@ -40,17 +40,22 @@ load = () => {
     )
 }
 
-deteleData = (id, name) => {
-    var str = `Delete ${name} ?`
-    var r = confirm(str);
-    if (r == true) {
-        $.post(
-            './php/deleteData.php',
-            { id },
-            (data, response) => {
-                load()
-            }
-        )
+deteleData = (id, name, datte) => {
+    var today = new Date().toJSON().slice(0, 10)
+    if (today == datte) {
+        var str = `Delete ${name} ?`
+        var r = confirm(str);
+        if (r == true) {
+            $.post(
+                './php/deleteData.php',
+                { id },
+                (data, response) => {
+                    load()
+                }
+            )
+        }
+    }else{
+        alert("Can not Delete old data.")
     }
 }
 
