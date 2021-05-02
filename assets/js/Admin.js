@@ -103,10 +103,7 @@ toogleStatus = (id, t) => {
         './php/toogleStatus.php',
         { t, id },
         (data, response) => {
-            if (data === "Success") {
-                load()
-                return
-            }
+            load()
             console.log(data);
         }
     )
