@@ -4,7 +4,7 @@ load = () => {
         (data, response) => {
             data = JSON.parse(data)
             if (data != null) {
-                var table = `<table class="table table-striped" id="OldTable"><thead class="thead-dark"><tr><th>ID</th><th>Name</th><th>Village</th><th>Status</th><th>Case</th><th>Date</th><th>Time</th><th>Delete</th></tr></thead>`;
+                var table = `<table class="table table-striped" id="OldTable"><thead class="thead-dark"><tr><th>ID</th><th>Name</th><th>Village</th><th>Status</th><th>Case</th><th>Money</th><th>Date</th><th>Time</th><th>Delete</th></tr></thead>`;
                 var date = data[0].date
                 data.forEach(ele => {
                     if (ele.status == 1) {
@@ -25,6 +25,7 @@ load = () => {
                             <td>${ele.village}</td>
                             <td>${status}</td>
                             <td>${ele.case}</td>
+                            <td class="text-center">${ele.money}</td>
                             <td>${ele.date}</td>
                             <td>${ele.time}</td>
                             <td class="text-center"><i class="material-icons" style="color: red;" onclick="deteleData(${ele.id},'${ele.name}','${ele.date}')">delete</i></td>

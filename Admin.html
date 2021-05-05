@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Niral</title>
+    <link rel="icon" href="./AppImages/Niral.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -41,6 +42,26 @@
             </div>
         </div>
     </nav>
+    <div class="modal fade" id="changeMoney" tabindex="-1" aria-labelledby="changeMoneyLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changeMoneyLabel">Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control my-2" type="text" id="money" autocomplete="off" placeholder="Money"
+                        required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="moneySubmit()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="addPatient" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -50,14 +71,17 @@
                 </div>
                 <div class="modal-body">
                     <form id="addForm">
-                        <input class="form-control my-2" type="text" id="name" autocomplete="off" placeholder="Name" required>
-                        <input class="form-control my-2" type="text" id="village" autocomplete="off" placeholder="Village" required>
+                        <input class="form-control my-2" type="text" id="name" autocomplete="off" placeholder="Name"
+                            required>
+                        <input class="form-control my-2" type="text" id="village" autocomplete="off"
+                            placeholder="Village" required>
                         <label>Case</label>
                         <div id="case" class="p-2">
-                            <div class="form-check mr-5"><input class="form-check-input" type="radio" id="case"
-                                    name="case" value="new" checked><label class="form-check-label" for="formCheck-1">New</label></div>
-                            <div class="form-check"><input class="form-check-input" type="radio" id="case"
-                                    name="case" value="old"><label class="form-check-label" for="formCheck-2">Old</label></div>
+                            <div class="form-check mr-5"><input class="form-check-input" type="radio" name="case"
+                                    value="new" checked><label class="form-check-label" for="formCheck-1">New</label>
+                            </div>
+                            <div class="form-check"><input class="form-check-input" type="radio" name="case"
+                                    value="old"><label class="form-check-label" for="formCheck-2">Old</label></div>
                         </div>
                     </form>
                 </div>

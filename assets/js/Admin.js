@@ -1,6 +1,9 @@
 var namme = document.getElementById('name')
 var village = document.getElementById('village')
 var casse = document.getElementsByName('case')
+var moneyName = document.getElementById('changeMoneyLabel')
+var moneyInput = document.getElementById('money')
+var moneyID
 
 load = () => {
     $.get(
@@ -17,6 +20,7 @@ load = () => {
                                 <th>Name</th>
                                 <th>Village</th>
                                 <th>Status</th>
+                                <th>Money</th>
                                 <th>Toogle</th>
                                 <th>Case</th>
                                 <th>Time</th>
@@ -54,6 +58,7 @@ load = () => {
                             <td>${ele.name}</td>
                             <td>${ele.village}</td>
                             <td>${status}</td>
+                            <td class="text-center" onclick="changeMoney(${ele.id},'${ele.name}',${ele.money})">${ele.money}</td>
                             <td class="text-center" onclick="toogleStatus(${ele.id},${t})">${toogle}</td>
                             <td>${ele.case}</td>
                             <td>${ele.time}</td>
@@ -84,7 +89,6 @@ formSubmit = () => {
     let villlage = village.value
 
     if(nammme !== ""){
-        console.log({ cassse, nammme, villlage });
         $.post(
             "./php/addData.php",
             { cassse, nammme, villlage },
@@ -104,9 +108,30 @@ toogleStatus = (id, t) => {
         { t, id },
         (data, response) => {
             load()
-            console.log(data);
         }
     )
+}
+
+changeMoney = (id,name,m) => {
+    moneyName.innerHTML = name
+    moneyID = id
+    $('#changeMoney').modal('show')
+}
+
+moneySubmit = () => {
+    id = moneyID
+    money = moneyInput.value
+    moneyInput.value = null
+    
+    $.post(
+        './php/changeMoney.php',
+        {id,money},
+        (data, response) => {
+            load()
+        }
+    )
+
+    $('#changeMoney').modal('hide')
 }
 
 modelShow = () => {
