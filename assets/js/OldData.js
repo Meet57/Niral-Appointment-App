@@ -14,7 +14,7 @@ load = () => {
                     }
 
                     if (date !== ele.date) {
-                        table += `<tr><td colspan="8" style="background-color: Lightgreen;"></td></tr>`
+                        table += `<tr><td colspan="9" style="background-color: Lightgreen;"></td></tr>`
                         date = ele.date
                     }
 
