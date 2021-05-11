@@ -1,4 +1,14 @@
-.btn.btn-primary.addButton {
+.addButton {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+  padding:10px;
+}
+
+.infoButton {
   border-radius: 50%;
   position: fixed;
   bottom: 15px;
